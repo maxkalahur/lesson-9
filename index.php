@@ -57,7 +57,7 @@ include "db.php";
 // var_dump($newCats);
 
 $categories = sql($db, 'SELECT * FROM `categories`', [], 'rows');
-var_dump($categories); */ */
+var_dump($categories); 
 
 
 
