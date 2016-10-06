@@ -1,8 +1,8 @@
 <?php
 
-include "db.php";
+// include "db.php";
 
-// $db = new PDO('mysql:host=localhost;dbname=lesson9', 'student', 'secret_pas/* /* s');
+// $db = new PDO('mysql:host=localhost;dbname=lesson9', 'student', 'secret_pass');
 
 // $insert = $db->prepare("INSERT INTO categories(`title`) VALUES(?)");
 // $insert->execute(array('bicycles'));
@@ -15,7 +15,7 @@ include "db.php";
 // $insert->execute(array('name' => 'Vasiliy', 'email' => 'vaska123@gmail.com', 'age' => 21, 'birth' => '1996-11-30 12:36:00'));
 
 // $insert = $db->prepare("INSERT INTO users SET `name`=?,`email`=?, `age`=?,`birth`=?");
-// $insert->execute(array('Grigoriy','grisha@mail.ru','31','1985-6-1 21:01:00'));
+// $insert->execute(array('Grigoriy','grisha@gmail.com','31','1985-6-1 21:01:00'));
 
 // var_dump( $db->lastInsertId() );
 
@@ -40,6 +40,17 @@ include "db.php";
 	// print_r($user); echo '<br/>';
 // }
 
+// echo '<hr/>';
+
+// $select = $db->query('SELECT * FROM `users` WHERE `email` LIKE "%gmail%"');
+// $select = $db->prepare('SELECT * FROM `users` WHERE `email` LIKE ?');
+// $select->execute(['%gmail%']);
+// $users = $select->fetchAll(PDO::FETCH_ASSOC);
+
+// foreach($users as $user) {
+	// print_r($user); echo '<br/>';
+// }
+
 // $db->exec("UPDATE `users` SET `name`='Misha' WHERE `name`='Vasiliy'");
 
 // $insert = $db->prepare("UPDATE `users` SET `name`=? WHERE `name`=?");
@@ -56,8 +67,17 @@ include "db.php";
 // $newCats = sql($db, 'INSERT INTO categories(`title`) VALUES(?), (?), (?), (?), (?)', ['food','leisure','tech','clothes','auto']);
 // var_dump($newCats);
 
-$categories = sql($db, 'SELECT * FROM `categories`', [], 'rows');
-var_dump($categories); 
+// $affected_rows = $db->exec("INSERT INTO categories(`title`) VALUES(1),(2)");
+// echo $affected_rows.' were affected<br/>';
+
+// $affected_rows = $db->exec("UPDATE categories SET title='value123'");
+// echo $affected_rows.' were affected<br/>';
+
+// $affected_rows = $db->exec("DELETE FROM categories");
+// echo $affected_rows.' were affected<br/>';
+
+// $categories = sql($db, 'SELECT * FROM `categories`', [], 'rows');
+// var_dump($categories);
 
 
 
