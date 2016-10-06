@@ -2,7 +2,7 @@
 
 include "db.php";
 
-// $db = new PDO('mysql:host=localhost;dbname=lesson9', 'student', 'secret_pass');
+// $db = new PDO('mysql:host=localhost;dbname=lesson9', 'student', 'secret_pas/* /* s');
 
 // $insert = $db->prepare("INSERT INTO categories(`title`) VALUES(?)");
 // $insert->execute(array('bicycles'));
@@ -17,9 +17,14 @@ include "db.php";
 // $insert = $db->prepare("INSERT INTO users SET `name`=?,`email`=?, `age`=?,`birth`=?");
 // $insert->execute(array('Grigoriy','grisha@mail.ru','31','1985-6-1 21:01:00'));
 
+// var_dump( $db->lastInsertId() );
+
 // $db->exec("INSERT INTO users SET `name`='Evgen',`email`='gena@yandex.ru', `age`=22,`birth`=DATE('1997-7-15 19:00:00')");
 
 // $categories = $db->query('SELECT * FROM `categories`');
+
+// var_dump( $categories->rowCount() );
+
 // $categories = $categories->fetchAll(PDO::FETCH_ASSOC);
 
 // foreach( $categories as $key => $category ) {
@@ -52,7 +57,7 @@ include "db.php";
 // var_dump($newCats);
 
 $categories = sql($db, 'SELECT * FROM `categories`', [], 'rows');
-var_dump($categories);
+var_dump($categories); */ */
 
 
 
