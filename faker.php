@@ -20,7 +20,7 @@ function randVal( $valName ) {
 	$productDescriptions  = ['test test test test', 'axst axst axst axst', 'stsd testsd stxc estgfs', 'dqq1st sdazst czxast 123st', 'czxest fdest test teasd', ];
 	
 	/* Orders */
-	$orderStatuses = ['open','in progres','closed'];
+	$orderStatuses = ['open','in progress','closed'];
 	
 	/* Reviews */
 	$reviewTexts = ['Good', 'Bad', 'Normal', 'Auwfull', 'Great'];
