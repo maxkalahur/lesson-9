@@ -84,7 +84,7 @@ function insertRow( $db, &$insertedIds, $table ) {
 			'product_id' => $insertedIds['products'][ rand(0, count($insertedIds['products'])-1) ],
 			'created_at' => "'".rand(2015,2016).'-'.rand(1,12).'-'.rand(1,28).' '.rand(0,23).':'.rand(0,59).':'.rand(0,59)."'",
 			'text' => randVal('reviewTexts'),
-			'rating' => rand(15,100)
+			'rating' => rand(1,5)
 		];
 	}
 	
