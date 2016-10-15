@@ -1,4 +1,54 @@
+<?
+	$_SESSION['cart']['products'] = 0;
+?>
+
+
+<div class="cart">
+	<?= ( $_SESSION['cart']['products'] > 0 ) ? 
+		$_SESSION['cart']['products'] : 
+		'' 
+	?>
+	</div>
+
+<button class="buy-product" data-id="13">BUY</button>
+
+<script>
+	jQuery('.buy-product').click( function() {
+		var productId = $(this).attr('data-id');
+		
+		$.ajax({
+			url: '/add-product-to-cart.json',
+			data: { id: productId },
+			method: "POST",
+			dataType: "JSON",
+			success: function( data ) {
+				if( data.amount > 0 ) {
+					$('.cart').html('В корзине '+data.amount+' товаров!');
+				}
+			}
+			
+		});
+		
+	});
+</script>
+
+
 <?php
+
+// controller: route "/add-product-to-cart.json"
+$productId = $_POST['id'];
+$_SESSION['cart']['products'][] = $productId;
+
+echo json_encode([ 'amount'=> count($_SESSION['cart']['products']) ]);
+
+
+$url = parse_url( $_SERVER['SERVER_NAME'] . $_SERVER['REQUEST_URI'] );
+var_dump($url);
+
+$_id = '';
+$_subaction = 'SELECT FROM $categoryTable WHERE `title` = "'.$title.'"';
+$_action = '';
+
 
 include "db.php";
 
